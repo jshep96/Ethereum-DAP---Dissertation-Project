@@ -1,0 +1,329 @@
+body {
+    margin:0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    background-color: #f5f5f0;
+}
+
+/*All #navbar is for the navbar at the top of the page. Set to fixed*/
+
+#navbar {
+    background: #333;
+    padding: 5px;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    
+}
+
+
+#navbar li  {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+#navbar a {
+    color: rgb(214, 214, 214);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#navbar a:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+}
+
+/*Main content in the body of the page. Each logbook is placed into a div either on the left hand side(.fColumn) or
+on the right hand side (.sColumn). A container holds the picture of the logbook along with all the buttons to edit 
+or transfer details. Set to relative position so buttons can be placed absolute inside relative container.*/
+
+#title {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+.column {
+    position: relative;
+    float:left;
+    width: 46%;
+    margin: 1%;   
+}
+
+#sColumn {
+    float: right;  
+}
+
+.boxContainer {
+    position: relative;  
+}
+
+.box {
+    position: relative;
+    border: solid 1px #555;
+    background-color: #eed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);  
+    width: 50%;
+    left:0;
+    right:0;
+    margin:auto;
+    
+}
+
+.box:hover {
+    transform: scale(1.1, 1.1);
+
+}
+
+.make {
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    margin: auto;
+    right:0;
+    left:0;   
+}
+
+.model {
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    margin: auto;
+    right:0;
+    left:0
+}
+
+.numPlate {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.wheel {
+    position: relative;
+    width: 90%;
+    opacity: 0.3;
+    left: 5%;
+}
+
+.boxBtn {
+    position: absolute;
+    width: 20%;
+    height: 30px;
+}
+
+.transBtn {
+    top:30%;
+}
+
+#fColumn .transBtn {
+    right:0;
+   
+}
+
+.editBtn {
+    top:55%; 
+}
+
+#fColumn .editBtn {
+    right:0;
+   
+}
+
+
+/*All code for the overlay when a box is pressed to open up the logbook details, or the edit button to open
+up the same overlay with text areas to change the details of the logbook. Set to fixed position.
+z-index used to position infront of all other items*/
+
+.overlay {
+    position: fixed; 
+    z-index: 3; 
+    background-color: #f0e0e2;
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+
+.overlay .content {
+    position: relative;
+    text-align: center;
+    height: 100%;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+   
+    color: #777;
+    font: 14px/100% arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    position: absolute;
+    right: 0.4em;
+    top: 0.2em;
+    font-size: 1.5em;
+    height:2em;
+}
+
+.overlay .closebtn::after {
+    content: '✖'; /* UTF-8 symbol */
+
+}
+
+#detOverlay  {
+    font-size: 20px;
+    height: 0%;
+    width: 50%;
+    z-index: 3; 
+    left: 25%;
+    top: 10%;
+}
+
+#detOverlay h1 {
+    border-bottom: #333;
+    border-bottom-style: dashed;
+    padding-bottom: 30px;
+    margin: 40px 50px 0px 50px;
+    font-size: 40px;
+    
+}
+
+#detOverlay #fListContainer,
+#detOverlay #sListContainer {
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+#detOverlay #sListContainer {
+    height: 350px;
+    overflow: hidden;
+}
+
+#detOverlay .content ul {
+    text-align: left;
+    margin-bottom: 30px;
+    margin-left: 18%;
+    padding:0;
+    width: 30%;
+    float: left;    
+}
+
+#detOverlay .content li {
+    list-style-type: none;
+    margin-bottom: 11px;   
+}
+
+#detOverlay .ownerDet li {
+    margin-bottom: 7px;
+}
+
+#detOverlay .content .carDet, 
+#detOverlay .content .ownerDet  {
+    width: 35%;
+    float: left;
+    text-align: left;
+    margin-left: 10%;
+}
+
+#detOverlay .overlayEditBtn {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 20%;   
+}
+
+
+
+/*Code to display the overlay when transfer button is clicked. Also set to fixed position.*/
+
+#transOverlay  {
+    font-size: 15px;
+    height: 0px;  /*250px*/
+    width: 700px;
+    z-index: 3; 
+    left: 28%;
+    right: 23%;
+    top: 33%;
+    overflow: hidden;
+    
+}
+
+
+#transOverlay form, input, label {
+    margin-left: 10%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: left;
+    display: inline-block;
+    font-size: px;
+}
+
+#transOverlay #fInput {
+    margin-left: 80px;
+    width: 250px;
+}
+
+#transOverlay #sInput {
+    margin-left: 15px;
+    width: 250px;
+    margin-right: 50px;
+}
+
+#transOverlay .submitBtn {
+    margin-left: 30%;
+    margin-top: 20px;
+    width: 25%;
+    height: 25px;
+
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-width: 1250px) {
+
+    .title, .make, .model {
+        font-size: 25px;
+    }
+
+    #detOverlay h1  {
+        font-size: 35px;
+    }
+
+    #detOverlay .content .ul {
+        margin-left: 15%;
+    }
+   
+}
+
+@media screen and (max-width: 750px) {
+
+    .title, .make, .model {
+        font-size: 20px;
+    }
+
+    #detOverlay h1  {
+        font-size: 25px;
+    }
+
+    #detOverlay .content .ul {
+        margin-left: 10%;
+    }
+
+}
+
+
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <title>Digital Logbook</title>
+
+
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li>
+                <a href="#">Logbooks</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- The overlay -->
+    <div class="overlay" id="detOverlay">
+        <a href="javascript:void(0)" class="closebtn" id="detClose"></a>
+        <div class="content">
+
+            <h1>Logbook Details</h1>
+
+            <div id="fListContainer">
+                <ul id="fList">
+                    <li>Title: </li>
+                    <li>First Name:</li>
+                    <li>Last Name:</li>
+                    <li>Birth Date:</li>
+                    <li>Address:</li>
+                    <li>Postcode:</li>
+                </ul>
+
+
+                <ul class="ownerDet" id="ownerDet">
+
+                </ul>
+            </div>
+            <div id="sListContainer">
+
+                <ul id="sList">
+                    <li>Registration:</li>
+                    <li>Date Made:</li>
+                    <li>Make:</li>
+                    <li>Model:</li>
+                    <li>Body Type:</li>
+                    <li>Tax Class:</li>
+                    <li>Colour:</li>
+                    <li>Fuel:</li>
+                    <li>Weight:</li>
+                    <li>Cylinder CC:</li>
+                </ul>
+
+                <ul class="carDet">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="overlay" id="transOverlay">
+        <a href="javascript:void(0)" class="closebtn" id="transClose"></a>
+        <div class="content">
+
+            <h1>Transfer Ownership</h1>
+            <form>
+
+                <label for="fInput"> Number Plate:</label>
+                <input type="text" id="fInput" name="address" value="Number Plate" readonly>
+
+                <label for="sInput"> To (Wallet address key):</label>
+                <input type="text" id="sInput" name="address" value="Wallet address key">
+
+
+                <input class="submitBtn" id="logId" type="button" value="Transfer">
+
+            </form>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <h1 id="title"> My Logbooks </h1>
+    <div class="wrapper">
+
+        <div class="column" id="fColumn">
+
+
+
+        </div>
+
+
+        <div class="column" id="sColumn">
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
